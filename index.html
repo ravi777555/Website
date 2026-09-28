@@ -1,1868 +1,527 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>RAVI777555 | Nature Visuals</title>
-
-    <meta name="description"
-          content="RAVI777555 — Documenting the natural world through original photography and video.">
-
-    <meta name="keywords"
-          content="RAVI777555, Nature Visuals, Nature Photography, Nature Video, Wildlife, Landscapes, Earth, Cosmos">
-
-    <meta name="author" content="RAVI777555">
-
-    <style>
-
-        /* =========================================================
-           GLOBAL
-        ========================================================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #06111d;
-            color: #eaf3fb;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-        .container {
-            width: min(1180px, 92%);
-            margin: 0 auto;
-        }
-
-
-        /* =========================================================
-           COLORS
-        ========================================================= */
-
-        :root {
-            --bg: #06111d;
-            --bg-soft: #091a2b;
-            --bg-card: #0b2033;
-
-            --blue: #4da3ff;
-            --blue-light: #8bc8ff;
-            --blue-dark: #123e68;
-
-            --white: #f4f9fd;
-            --text: #d8e6f2;
-            --muted: #94a9ba;
-
-            --border: rgba(100, 180, 255, 0.18);
-            --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-        }
-
-
-        /* =========================================================
-           NAVBAR
-        ========================================================= */
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-
-            background: rgba(4, 14, 24, 0.88);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-
-            border-bottom: 1px solid var(--border);
-        }
-
-        .navbar {
-            min-height: 82px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            min-width: 0;
-        }
-
-        .brand-logo {
-            width: 58px;
-            height: 58px;
-
-            object-fit: contain;
-
-            border-radius: 50%;
-
-            border: 1px solid rgba(139, 200, 255, 0.35);
-
-            background: #071521;
-
-            box-shadow:
-                0 0 0 4px rgba(77, 163, 255, 0.05),
-                0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.15;
-        }
-
-        .brand-name {
-            font-size: 17px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--white);
-        }
-
-        .brand-subtitle {
-            margin-top: 4px;
-            font-size: 9px;
-            letter-spacing: 2px;
-            color: var(--blue-light);
-            text-transform: uppercase;
-        }
-
-        nav ul {
-            list-style: none;
-
-            display: flex;
-            align-items: center;
-            gap: 27px;
-        }
-
-        nav a {
-            position: relative;
-
-            color: #cbdce9;
-
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-
-            text-transform: uppercase;
-
-            transition: 0.3s ease;
-        }
-
-        nav a::after {
-            content: "";
-
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-
-            width: 0;
-            height: 1px;
-
-            background: var(--blue-light);
-
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #ffffff;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .menu-btn {
-            display: none;
-
-            border: 1px solid var(--border);
-            background: transparent;
-            color: white;
-
-            width: 44px;
-            height: 40px;
-
-            cursor: pointer;
-
-            font-size: 23px;
-        }
-
-
-        /* =========================================================
-           HERO
-        ========================================================= */
-
-        .hero {
-            min-height: 100vh;
-
-            padding-top: 82px;
-
-            display: flex;
-            align-items: center;
-
-            position: relative;
-
-            background:
-                radial-gradient(
-                    circle at 70% 35%,
-                    rgba(24, 101, 170, 0.22),
-                    transparent 38%
-                ),
-                linear-gradient(
-                    135deg,
-                    #06111d 0%,
-                    #081c2e 55%,
-                    #06111d 100%
-                );
-
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-
-            position: absolute;
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(6, 17, 29, 0.98) 0%,
-                    rgba(6, 17, 29, 0.78) 45%,
-                    rgba(6, 17, 29, 0.30) 100%
-                );
-
-            pointer-events: none;
-        }
-
-        .hero-grid {
-            position: absolute;
-            inset: 0;
-
-            opacity: 0.08;
-
-            background-image:
-                linear-gradient(
-                    rgba(130, 200, 255, 0.35) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(130, 200, 255, 0.35) 1px,
-                    transparent 1px
-                );
-
-            background-size: 60px 60px;
-
-            mask-image: linear-gradient(
-                to right,
-                black,
-                transparent 85%
-            );
-        }
-
-        .hero-inner {
-            position: relative;
-            z-index: 2;
-
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-
-            gap: 60px;
-
-            align-items: center;
-        }
-
-        .hero-content {
-            max-width: 720px;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-
-            color: var(--blue-light);
-
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 20px;
-        }
-
-        .eyebrow::before {
-            content: "";
-
-            width: 35px;
-            height: 1px;
-
-            background: var(--blue);
-        }
-
-        .hero h1 {
-            font-size: clamp(48px, 8vw, 94px);
-
-            line-height: 0.92;
-
-            letter-spacing: 7px;
-
-            color: #ffffff;
-
-            font-weight: 800;
-
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            display: block;
-
-            color: var(--blue-light);
-
-            font-size: 0.42em;
-
-            letter-spacing: 8px;
-
-            margin-top: 18px;
-        }
-
-        .hero-description {
-            max-width: 650px;
-
-            color: #b8cbd9;
-
-            font-size: 18px;
-
-            margin-bottom: 15px;
-        }
-
-        .hero-subdescription {
-            max-width: 650px;
-
-            color: var(--muted);
-
-            font-size: 14px;
-
-            margin-bottom: 35px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-
-        .btn {
-            display: inline-flex;
-
-            align-items: center;
-            justify-content: center;
-
-            min-height: 48px;
-
-            padding: 0 24px;
-
-            border: 1px solid rgba(120, 195, 255, 0.45);
-
-            font-size: 11px;
-            font-weight: 700;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            transition: 0.3s ease;
-        }
-
-        .btn-primary {
-            background: #1765a2;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #2183cc;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: rgba(8, 25, 40, 0.55);
-            color: #dcecf8;
-        }
-
-        .btn-outline:hover {
-            background: rgba(34, 93, 135, 0.35);
-            transform: translateY(-2px);
-        }
-
-        .hero-logo-area {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-logo-frame {
-            width: min(430px, 80vw);
-            aspect-ratio: 1 / 1;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 28px;
-
-            border: 1px solid rgba(100, 190, 255, 0.20);
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(25, 110, 180, 0.15),
-                    rgba(4, 15, 26, 0.25)
-                );
-
-            box-shadow: var(--shadow);
-
-            position: relative;
-        }
-
-        .hero-logo-frame::before,
-        .hero-logo-frame::after {
-            content: "";
-
-            position: absolute;
-
-            width: 45px;
-            height: 45px;
-
-            border-color: rgba(110, 190, 255, 0.5);
-            border-style: solid;
-        }
-
-        .hero-logo-frame::before {
-            top: -1px;
-            left: -1px;
-
-            border-width: 1px 0 0 1px;
-        }
-
-        .hero-logo-frame::after {
-            right: -1px;
-            bottom: -1px;
-
-            border-width: 0 1px 1px 0;
-        }
-
-        .hero-logo {
-            width: 100%;
-            height: 100%;
-
-            object-fit: contain;
-
-            filter: drop-shadow(
-                0 20px 35px rgba(0, 0, 0, 0.35)
-            );
-        }
-
-
-        /* =========================================================
-           GENERAL SECTION
-        ========================================================= */
-
-        section {
-            padding: 110px 0;
-            position: relative;
-        }
-
-        .section-dark {
-            background: #06111d;
-        }
-
-        .section-soft {
-            background: #081a2b;
-        }
-
-        .section-heading {
-            margin-bottom: 50px;
-        }
-
-        .section-label {
-            color: var(--blue-light);
-
-            font-size: 10px;
-            font-weight: 700;
-
-            letter-spacing: 3px;
-            text-transform: uppercase;
-
-            margin-bottom: 12px;
-        }
-
-        .section-heading h2 {
-            font-size: clamp(32px, 5vw, 56px);
-
-            line-height: 1.05;
-
-            color: white;
-
-            letter-spacing: 1px;
-
-            margin-bottom: 18px;
-        }
-
-        .section-heading p {
-            max-width: 720px;
-
-            color: var(--muted);
-
-            font-size: 15px;
-        }
-
-
-        /* =========================================================
-           EXPLORE
-        ========================================================= */
-
-        .explore-grid {
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            border-top: 1px solid var(--border);
-            border-left: 1px solid var(--border);
-        }
-
-        .explore-card {
-            min-height: 205px;
-
-            padding: 28px;
-
-            border-right: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(12, 38, 60, 0.75),
-                    rgba(5, 18, 30, 0.75)
-                );
-
-            transition: 0.35s ease;
-
-            position: relative;
-        }
-
-        .explore-card:hover {
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(20, 72, 112, 0.78),
-                    rgba(7, 27, 44, 0.85)
-                );
-
-            transform: translateY(-4px);
-        }
-
-        .explore-number {
-            color: var(--blue);
-
-            font-size: 11px;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 35px;
-        }
-
-        .explore-card h3 {
-            font-size: 20px;
-
-            color: white;
-
-            margin-bottom: 8px;
-        }
-
-        .explore-card p {
-            color: #91a9bb;
-
-            font-size: 13px;
-        }
-
-
-        /* =========================================================
-           ABOUT
-        ========================================================= */
-
-        .about-layout {
-            display: grid;
-
-            grid-template-columns: 0.75fr 1.25fr;
-
-            gap: 70px;
-
-            align-items: start;
-        }
-
-        .about-intro {
-            position: sticky;
-            top: 120px;
-        }
-
-        .about-intro h2 {
-            font-size: clamp(34px, 4vw, 56px);
-
-            line-height: 1.05;
-
-            color: white;
-
-            margin-bottom: 20px;
-        }
-
-        .about-intro p {
-            color: var(--blue-light);
-
-            font-size: 15px;
-
-            max-width: 330px;
-        }
-
-        .about-content {
-            color: #c2d1dd;
-
-            font-size: 15px;
-        }
-
-        .about-content p {
-            margin-bottom: 22px;
-        }
-
-        .about-content strong {
-            color: white;
-        }
-
-        .about-highlight {
-            margin: 35px 0;
-
-            padding: 28px;
-
-            border-left: 2px solid var(--blue);
-
-            background: rgba(15, 52, 82, 0.35);
-
-            color: #eaf5fd;
-
-            font-size: 18px;
-        }
-
-
-        /* =========================================================
-           PHILOSOPHY
-        ========================================================= */
-
-        .philosophy {
-            text-align: center;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(22, 90, 145, 0.22),
-                    transparent 55%
-                ),
-                #071625;
-        }
-
-        .philosophy-inner {
-            max-width: 850px;
-            margin: auto;
-        }
-
-        .philosophy-title {
-            font-size: clamp(38px, 7vw, 78px);
-
-            line-height: 1;
-
-            color: white;
-
-            letter-spacing: 3px;
-
-            margin-bottom: 20px;
-        }
-
-        .philosophy-subtitle {
-            color: var(--blue-light);
-
-            font-size: clamp(18px, 3vw, 28px);
-
-            margin-bottom: 30px;
-        }
-
-        .philosophy-text {
-            color: #afc1ce;
-
-            font-size: 15px;
-
-            max-width: 760px;
-
-            margin: 0 auto 35px;
-        }
-
-        .principles {
-            display: flex;
-
-            justify-content: center;
-
-            flex-wrap: wrap;
-
-            gap: 10px;
-        }
-
-        .principles span {
-            padding: 8px 15px;
-
-            border: 1px solid var(--border);
-
-            color: #bcd5e6;
-
-            font-size: 10px;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-        }
-
-
-        /* =========================================================
-           INFORMATION
-        ========================================================= */
-
-        .info-grid {
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 20px;
-        }
-
-        .info-card {
-            padding: 32px;
-
-            min-height: 300px;
-
-            background: #091c2e;
-
-            border: 1px solid var(--border);
-
-            transition: 0.3s ease;
-        }
-
-        .info-card:hover {
-            border-color: rgba(100, 190, 255, 0.40);
-
-            transform: translateY(-4px);
-        }
-
-        .info-card-number {
-            color: var(--blue);
-
-            font-size: 10px;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 28px;
-        }
-
-        .info-card h3 {
-            color: white;
-
-            font-size: 21px;
-
-            margin-bottom: 16px;
-        }
-
-        .info-card p {
-            color: #98adbd;
-
-            font-size: 13px;
-        }
-
-
-        /* =========================================================
-           CONTACT
-        ========================================================= */
-
-        .contact-layout {
-            display: grid;
-
-            grid-template-columns: 1fr 0.8fr;
-
-            gap: 60px;
-
-            align-items: center;
-        }
-
-        .contact-content h2 {
-            font-size: clamp(40px, 6vw, 70px);
-
-            line-height: 1;
-
-            color: white;
-
-            margin-bottom: 25px;
-        }
-
-        .contact-content p {
-            max-width: 600px;
-
-            color: #a8bac8;
-
-            font-size: 15px;
-
-            margin-bottom: 30px;
-        }
-
-        .email-box {
-            display: inline-block;
-
-            padding: 16px 20px;
-
-            border: 1px solid var(--border);
-
-            background: rgba(11, 37, 58, 0.65);
-
-            color: var(--blue-light);
-
-            font-size: 14px;
-
-            letter-spacing: 0.5px;
-
-            word-break: break-word;
-        }
-
-        .contact-image-frame {
-            position: relative;
-
-            padding: 10px;
-
-            border: 1px solid var(--border);
-
-            background: #081725;
-        }
-
-        .contact-image {
-            width: 100%;
-
-            aspect-ratio: 4 / 3;
-
-            object-fit: cover;
-
-            background: #0b1b2a;
-        }
-
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-
-        footer {
-            padding: 55px 0 30px;
-
-            background: #040c14;
-
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-top {
-            display: flex;
-
-            justify-content: space-between;
-
-            gap: 40px;
-
-            padding-bottom: 35px;
-
-            border-bottom: 1px solid var(--border);
-        }
-
-        .footer-brand h3 {
-            color: white;
-
-            font-size: 18px;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 7px;
-        }
-
-        .footer-brand p {
-            color: #8197a8;
-
-            font-size: 12px;
-        }
-
-        .footer-links {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 20px;
-        }
-
-        .footer-links a {
-            color: #9eb3c2;
-
-            font-size: 10px;
-
-            letter-spacing: 1.5px;
-
-            text-transform: uppercase;
-
-            transition: 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            display: flex;
-
-            justify-content: space-between;
-
-            gap: 20px;
-
-            padding-top: 25px;
-
-            color: #687d8d;
-
-            font-size: 11px;
-        }
-
-
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
-
-        @media (max-width: 950px) {
-
-            nav ul {
-                gap: 17px;
-            }
-
-            .hero-inner {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-logo-area {
-                display: none;
-            }
-
-            .explore-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-layout {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .about-intro {
-                position: static;
-            }
-
-            .about-intro p {
-                max-width: 650px;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-
-
-        @media (max-width: 760px) {
-
-            .navbar {
-                min-height: 72px;
-            }
-
-            .brand-logo {
-                width: 48px;
-                height: 48px;
-            }
-
-            .brand-name {
-                font-size: 14px;
-            }
-
-            .brand-subtitle {
-                font-size: 7px;
-            }
-
-            .menu-btn {
-                display: block;
-            }
-
-            nav {
-                position: absolute;
-
-                top: 72px;
-                left: 0;
-
-                width: 100%;
-
-                background: rgba(4, 14, 24, 0.97);
-
-                border-bottom: 1px solid var(--border);
-
-                display: none;
-            }
-
-            nav.active {
-                display: block;
-            }
-
-            nav ul {
-                flex-direction: column;
-
-                align-items: flex-start;
-
-                padding: 22px 5%;
-
-                gap: 20px;
-            }
-
-            nav a {
-                font-size: 11px;
-            }
-
-            .hero {
-                padding-top: 72px;
-            }
-
-            section {
-                padding: 80px 0;
-            }
-
-            .explore-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .explore-card {
-                min-height: 175px;
-            }
-
-            .footer-top,
-            .footer-bottom {
-                flex-direction: column;
-            }
-        }
-
-
-        @media (max-width: 480px) {
-
-            .container {
-                width: 90%;
-            }
-
-            .hero h1 {
-                font-size: 46px;
-
-                letter-spacing: 4px;
-            }
-
-            .hero h1 span {
-                letter-spacing: 5px;
-            }
-
-            .hero-description {
-                font-size: 16px;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .email-box {
-                width: 100%;
-            }
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RAVI | Nature Videos</title>
+
+<meta name="description" content="RAVI — Nature Videos documenting the natural world through original visual storytelling.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#06121c;
+    color:#ffffff;
+    line-height:1.6;
+}
+
+/* NAVBAR */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(6,18,28,0.92);
+    border-bottom:1px solid rgba(80,180,255,0.2);
+    backdrop-filter:blur(10px);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:16px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:3px;
+    color:#4db8ff;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#ffffff;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#4db8ff;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 25px 80px;
+    background:
+        linear-gradient(rgba(3,14,23,0.65),rgba(3,14,23,0.88)),
+        radial-gradient(circle at center,#123b55,#06121c 65%);
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:clamp(45px,8vw,90px);
+    letter-spacing:8px;
+    margin-bottom:15px;
+    color:#ffffff;
+}
+
+.hero h1 span{
+    color:#4db8ff;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#c9d8e3;
+    font-size:19px;
+}
+
+.hero-button{
+    display:inline-block;
+    margin-top:30px;
+    padding:13px 28px;
+    border:1px solid #4db8ff;
+    color:#ffffff;
+    text-decoration:none;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.hero-button:hover{
+    background:#4db8ff;
+    color:#06121c;
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 25px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#9fb4c2;
+}
+
+/* VIDEOS */
+
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.video-card{
+    background:#0b1e2c;
+    border:1px solid rgba(77,184,255,0.15);
+    border-radius:14px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.video-card:hover{
+    transform:translateY(-6px);
+    border-color:#4db8ff;
+}
+
+.video-box{
+    height:220px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+        linear-gradient(135deg,#0d344c,#071722);
+    color:#4db8ff;
+    font-size:50px;
+}
+
+.video-card-content{
+    padding:22px;
+}
+
+.video-card h3{
+    margin-bottom:8px;
+}
+
+.video-card p{
+    color:#9fb4c2;
+    font-size:14px;
+}
+
+/* ABOUT */
+
+.about{
+    background:#081923;
+}
+
+.about-content{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.about-content p{
+    color:#c3d0d8;
+    margin-bottom:18px;
+    font-size:17px;
+}
+
+/* CATEGORIES */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.category{
+    padding:35px 20px;
+    text-align:center;
+    background:#0b1e2c;
+    border:1px solid rgba(77,184,255,0.15);
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.category:hover{
+    border-color:#4db8ff;
+    transform:translateY(-5px);
+}
+
+.category h3{
+    color:#ffffff;
+}
+
+/* CONTACT */
+
+.contact{
+    background:#081923;
+}
+
+.contact-box{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+}
+
+.contact-box p{
+    color:#b9cbd5;
+    margin-bottom:25px;
+}
+
+.contact-button{
+    display:inline-block;
+    padding:13px 25px;
+    border-radius:25px;
+    background:#4db8ff;
+    color:#06121c;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px 20px;
+    background:#040c12;
+    color:#8195a2;
+    font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .nav-links{
+        gap:12px;
+    }
+
+    .video-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .video-grid{
+        grid-template-columns:1fr;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        letter-spacing:4px;
+    }
+}
+</style>
 </head>
-
 
 <body>
 
+<header>
+    <nav class="navbar">
 
-    <!-- =========================================================
-         NAVIGATION
-    ========================================================== -->
+        <div class="logo">RAVI</div>
 
-    <header>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#categories">Explore</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
-        <div class="container navbar">
+    </nav>
+</header>
 
-            <a href="#home" class="brand">
 
-                <!-- Official RAVI777555 logo -->
-                <img
-                    src="IMG_0744"
-                    alt="RAVI777555 Nature Visuals Logo"
-                    class="brand-logo"
-                >
+<!-- HOME -->
 
-                <div class="brand-text">
-                    <div class="brand-name">RAVI777555</div>
-                    <div class="brand-subtitle">Nature Visuals</div>
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <h1>RAVI <span>+</span> NATURE</h1>
+
+        <p>
+            Nature videos capturing landscapes, wildlife,
+            water, sky and the natural world through visual storytelling.
+        </p>
+
+        <a href="#videos" class="hero-button">
+            Explore Videos
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- VIDEOS -->
+
+<section id="videos">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Nature Videos</h2>
+            <p>Explore the natural world through moving images.</p>
+        </div>
+
+        <div class="video-grid">
+
+            <article class="video-card">
+                <div class="video-box">▶</div>
+                <div class="video-card-content">
+                    <h3>Mountains</h3>
+                    <p>Mountain landscapes, valleys and changing skies.</p>
                 </div>
+            </article>
 
+            <article class="video-card">
+                <div class="video-box">▶</div>
+                <div class="video-card-content">
+                    <h3>Forests</h3>
+                    <p>Natural environments, trees and forest life.</p>
+                </div>
+            </article>
+
+            <article class="video-card">
+                <div class="video-box">▶</div>
+                <div class="video-card-content">
+                    <h3>Rivers & Lakes</h3>
+                    <p>Flowing water, reflections and peaceful landscapes.</p>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPLORE -->
+
+<section id="categories">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Explore Nature</h2>
+            <p>Different parts of the natural world.</p>
+        </div>
+
+        <div class="category-grid">
+
+            <div class="category">
+                <h3>Mountains</h3>
+            </div>
+
+            <div class="category">
+                <h3>Forests</h3>
+            </div>
+
+            <div class="category">
+                <h3>Rivers</h3>
+            </div>
+
+            <div class="category">
+                <h3>Lakes</h3>
+            </div>
+
+            <div class="category">
+                <h3>Oceans</h3>
+            </div>
+
+            <div class="category">
+                <h3>Sky & Clouds</h3>
+            </div>
+
+            <div class="category">
+                <h3>Wildlife</h3>
+            </div>
+
+            <div class="category">
+                <h3>Earth & Cosmos</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>About RAVI</h2>
+        </div>
+
+        <div class="about-content">
+
+            <p>
+                RAVI is a visual project focused on the natural world
+                through original nature videos and visual documentation.
+            </p>
+
+            <p>
+                From mountains and forests to rivers, oceans, wildlife,
+                clouds and the wider Earth, the project focuses on observing
+                and presenting nature through moving images.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Contact</h2>
+            <p>For questions, collaboration or information.</p>
+        </div>
+
+        <div class="contact-box">
+
+            <p>
+                Get in touch with RAVI.
+            </p>
+
+            <a
+                class="contact-button"
+                href="mailto:ravi777555official@gmail.com">
+                Contact RAVI
             </a>
 
-
-            <button
-                class="menu-btn"
-                id="menuBtn"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-            >
-                ☰
-            </button>
-
-
-            <nav id="mainNav">
-
-                <ul>
-
-                    <li>
-                        <a href="#home">Home</a>
-                    </li>
-
-                    <li>
-                        <a href="#explore">Explore</a>
-                    </li>
-
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
-
-                    <li>
-                        <a href="#philosophy">Philosophy</a>
-                    </li>
-
-                    <li>
-                        <a href="#information">Information</a>
-                    </li>
-
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-
-                </ul>
-
-            </nav>
-
         </div>
 
-    </header>
+    </div>
 
+</section>
 
 
-    <!-- =========================================================
-         HERO
-    ========================================================== -->
+<footer>
 
-    <main>
+    © 2026 RAVI. All Rights Reserved.
 
-        <section id="home" class="hero">
-
-            <div class="hero-grid"></div>
-
-            <div class="container hero-inner">
-
-                <div class="hero-content">
-
-                    <div class="eyebrow">
-                        Nature • Observation • Documentation
-                    </div>
-
-                    <h1>
-                        RAVI777555
-                        <span>NATURE VISUALS</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        Documenting the natural world through original
-                        photography &amp; video.
-                    </p>
-
-                    <p class="hero-subdescription">
-                        Exploring, observing and documenting the natural world —
-                        from landscapes and wildlife to Earth and Cosmos.
-                    </p>
-
-                    <div class="hero-buttons">
-
-                        <a
-                            href="#explore"
-                            class="btn btn-primary"
-                        >
-                            Explore the Natural World
-                        </a>
-
-                        <a
-                            href="#about"
-                            class="btn btn-outline"
-                        >
-                            About RAVI777555
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="hero-logo-area">
-
-                    <div class="hero-logo-frame">
-
-                        <img
-                            src="IMG_0744"
-                            alt="RAVI777555 Nature Visuals"
-                            class="hero-logo"
-                        >
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             EXPLORE
-        ====================================================== -->
-
-        <section id="explore" class="section-soft">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="section-label">
-                        Explore
-                    </div>
-
-                    <h2>
-                        The Natural World
-                    </h2>
-
-                    <p>
-                        From Earth’s landscapes and living systems
-                        to the sky above and the wider Cosmos.
-                    </p>
-
-                </div>
-
-
-                <div class="explore-grid">
-
-                    <a href="#about" class="explore-card">
-
-                        <div class="explore-number">01</div>
-
-                        <h3>Mountains</h3>
-
-                        <p>
-                            Landscapes, heights and changing horizons.
-                        </p>
-
-                    </a>
-
-
-                    <a href="#about" class="explore-card">
-
-                        <div class="explore-number">02</div>
-
-                        <h3>Forests</h3>
-
-                        <p>
-                            Natural textures, life and quiet movement.
-                        </p>
-
-                    </a>
-
-
-                    <a href="#about" class="explore-card">
-
-                        <div class="explore-number">03</div>
-
-                        <h3>Rivers</h3>
-
-                        <p>
-                            Flowing water and constantly changing scenes.
-                        </p>
-
-                    </a>
-
-
-                    <a href="#about" class="explore-card">
-
-                        <div class="explore-number">04</div>
-
-                        <h3>Lakes</h3>
-
-                        <p>
-                            Reflections, stillness and natural atmosphere.
-                        </p>
-
-                    </a>
-
-
-                    <a href="#about" class="explore-card">
-
-                        <div class="explore-number">05</div>
-
-                        <h3>Oceans</h3>
-
-                        <p>
-                            Open water, movement and vast horizons.
-                        </p>
-
-                    </a>
-
-
-                    <a href="#about" class="explore-card">
-
-                        <div class="explore-number">06</div>
-
-                        <h3>Sky &amp; Clouds</h3>
-
-                        <p>
-                            Light, weather and fleeting formations.
-                        </p>
-
-                    </a>
-
-
-                    <a href="#about" class="explore-card">
-
-                        <div class="explore-number">07</div>
-
-                        <h3>Wildlife</h3>
-
-                        <p>
-                            Living beings and their natural behaviour.
-                        </p>
-
-                    </a>
-
-
-                    <a href="#about" class="explore-card">
-
-                        <div class="explore-number">08</div>
-
-                        <h3>Earth &amp; Cosmos</h3>
-
-                        <p>
-                            From our planet to stars and galaxies.
-                        </p>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             ABOUT
-        ====================================================== -->
-
-        <section id="about" class="section-dark">
-
-            <div class="container about-layout">
-
-                <div class="about-intro">
-
-                    <div class="section-label">
-                        About RAVI777555
-                    </div>
-
-                    <h2>
-                        A Visual Journey Through the Natural World
-                    </h2>
-
-                    <p>
-                        Original photography and video
-                        focused on observing and documenting
-                        the natural world.
-                    </p>
-
-                </div>
-
-
-                <div class="about-content">
-
-                    <p>
-                        RAVI777555 एक visual project है, जो original
-                        photography और video के माध्यम से प्राकृतिक दुनिया
-                        को explore, observe और document करता है।
-                    </p>
-
-                    <p>
-                        पहाड़ों, जंगलों, नदियों, झीलों, महासागरों और आसमान
-                        से लेकर बादलों, वन्यजीवन और पृथ्वी के विविध
-                        landscapes तक—और पृथ्वी से दूर सितारों और galaxies
-                        तक—RAVI777555 एक सरल विचार पर बना है: दुनिया को उसके
-                        प्राकृतिक रूप में देखना, अनुभव करना और प्रस्तुत करना।
-                    </p>
-
-                    <p>
-                        प्रकृति को extraordinary बनने के लिए बदलने की ज़रूरत
-                        नहीं है। उसकी सुंदरता बदलते बादलों, बहते पानी,
-                        रोशनी की चाल, प्राकृतिक बनावटों, वन्यजीवन के व्यवहार
-                        और उन असंख्य पलों में है, जो शायद केवल पल भर के
-                        लिए ही मौजूद होते हैं।
-                    </p>
-
-                    <p>
-                        हमारा विश्वास है कि प्रकृति के प्रति गहरा सम्मान
-                        आवश्यक है। हम प्रकृति को केवल एक visual subject
-                        नहीं मानते, बल्कि उसे एक जीवित और निरंतर बदलती
-                        दुनिया के रूप में देखते हैं—जिसकी अपनी पहचान,
-                        अपना चरित्र और अपनी उपस्थिति है।
-                    </p>
-
-                    <p>
-                        हर landscape, हर प्राकृतिक घटना, हर जीवित प्राणी
-                        और हर बदलता वातावरण अपने साथ एक कहानी लेकर आता है।
-                        हमारा उद्देश्य उन कहानियों को सावधानी और सम्मान
-                        के साथ observe और document करना है।
-                    </p>
-
-
-                    <div class="about-highlight">
-                        हमारा तरीका सीधा है:
-                        <strong>Observe. Capture. Share.</strong>
-                    </div>
-
-
-                    <p>
-                        हमारे लिए photography और video केवल content नहीं हैं,
-                        बल्कि दुनिया को observe करने, पलों को सहेजने और
-                        अलग-अलग स्थानों की वास्तविकता को दर्ज करने का माध्यम हैं।
-                        हम प्राकृतिक रूप को बिना अनावश्यक जोड़-घटाव के सुरक्षित
-                        रखने का प्रयास करते हैं, ताकि रोशनी, मौसम, परछाइयाँ,
-                        प्रतिबिंब, बादल, movement, imperfections और
-                        अप्रत्याशित पल उसी सत्यता के साथ दिखाई दें,
-                        जो प्रकृति का हिस्सा हैं।
-                    </p>
-
-                    <p>
-                        यह project पृथ्वी के landscapes और जीवन से लेकर बड़े
-                        Cosmos तक फैला है—पहाड़ों, जंगलों, महासागरों, आसमान
-                        और सितारों तक—और इन सभी को एक सतत visual journey
-                        में जोड़ता है।
-                    </p>
-
-                    <p>
-                        RAVI777555 सिर्फ photographs और videos का संग्रह नहीं,
-                        बल्कि दुनिया को देखने, समझने और सहेजने की एक निरंतर
-                        कोशिश है।
-                    </p>
-
-                    <p>
-                        यह project एक बड़े framework का हिस्सा है—
-                        <strong>Project Radian के umbrella के तहत।</strong>
-                        इस संबंध के माध्यम से RAVI777555 का focus प्रकृति,
-                        original visual documentation और अपनी अलग पहचान
-                        पर ही केंद्रित रहता है।
-                    </p>
-
-                    <p>
-                        इस कार्य के माध्यम से हमारा उद्देश्य है कि लोग अपने
-                        आसपास की दुनिया को थोड़ा और करीब से देखें, उन
-                        बारीकियों को महसूस करें जिन्हें अक्सर नज़रअंदाज़
-                        कर दिया जाता है, और प्रकृति के भीतर मौजूद उस
-                        असाधारणता को देखें, जो पहले से ही हमारे सामने है।
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             PHILOSOPHY
-        ====================================================== -->
-
-        <section id="philosophy" class="philosophy">
-
-            <div class="container philosophy-inner">
-
-                <div class="section-label">
-                    Philosophy
-                </div>
-
-                <h2 class="philosophy-title">
-                    Observe.<br>
-                    Capture.<br>
-                    Share.
-                </h2>
-
-                <div class="philosophy-subtitle">
-                    Nature does not need to be changed to be extraordinary.
-                </div>
-
-                <p class="philosophy-text">
-                    बदलते बादल, बहता पानी, moving light, natural textures,
-                    wildlife behaviour और वे छोटे-छोटे moments जो केवल कुछ
-                    समय के लिए दिखाई देते हैं—यही प्राकृतिक दुनिया की
-                    वास्तविक कहानी का हिस्सा हैं।
-                </p>
-
-                <p class="philosophy-text">
-                    RAVI777555 का प्रयास है कि इन moments को observe किया जाए,
-                    capture किया जाए और सम्मान के साथ share किया जाए।
-                </p>
-
-                <div class="principles">
-
-                    <span>Real</span>
-                    <span>Natural</span>
-                    <span>Observed</span>
-                    <span>Documented</span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             INFORMATION
-        ====================================================== -->
-
-        <section id="information" class="section-soft">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="section-label">
-                        Information
-                    </div>
-
-                    <h2>
-                        Rights, Terms &amp; Privacy
-                    </h2>
-
-                    <p>
-                        Important information regarding the use of
-                        RAVI777555, its original creative works and privacy.
-                    </p>
-
-                </div>
-
-
-                <div class="info-grid">
-
-
-                    <article class="info-card">
-
-                        <div class="info-card-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Copyright &amp; Intellectual Property
-                        </h3>
-
-                        <p>
-                            © RAVI777555 — All Rights Reserved.
-                            Original photographs, videos, visual compositions,
-                            written materials, graphics, designs and other
-                            original creative works are protected by applicable
-                            copyright and intellectual property laws.
-                        </p>
-
-                        <br>
-
-                        <p>
-                            Unauthorized reproduction, redistribution,
-                            modification, commercial use or presentation as
-                            one's own is not permitted unless authorized or
-                            otherwise permitted by law.
-                        </p>
-
-                    </article>
-
-
-                    <article class="info-card">
-
-                        <div class="info-card-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Terms &amp; Conditions
-                        </h3>
-
-                        <p>
-                            By accessing or using the RAVI777555 website,
-                            visitors agree to comply with the applicable
-                            Terms &amp; Conditions. The website is intended
-                            to be used only for lawful purposes.
-                        </p>
-
-                        <br>
-
-                        <p>
-                            Accessing or viewing the website does not transfer
-                            ownership or grant an automatic license to use
-                            original content.
-                        </p>
-
-                    </article>
-
-
-                    <article class="info-card">
-
-                        <div class="info-card-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Privacy Policy
-                        </h3>
-
-                        <p>
-                            RAVI777555 respects your privacy. Information
-                            voluntarily provided through communication,
-                            such as email, may be used for responding to
-                            inquiries, maintaining communication and
-                            supporting website functionality.
-                        </p>
-
-                        <br>
-
-                        <p>
-                            RAVI777555 does not generally seek to collect
-                            personal information that is not necessary for
-                            website operation or communication.
-                        </p>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             CONTACT
-        ====================================================== -->
-
-        <section id="contact" class="section-dark">
-
-            <div class="container contact-layout">
-
-
-                <div class="contact-content">
-
-                    <div class="section-label">
-                        Contact
-                    </div>
-
-                    <h2>
-                        Stay Connected
-                    </h2>
-
-                    <p>
-                        For questions regarding RAVI777555, content
-                        permissions, licensing, privacy or other related
-                        matters, you may contact us by email.
-                    </p>
-
-                    <a
-                        href="mailto:ravi777555official@gmail.com"
-                        class="email-box"
-                    >
-                        ravi777555official@gmail.com
-                    </a>
-
-                </div>
-
-
-                <div class="contact-image-frame">
-
-                    <img
-                        src="IMG_0769"
-                        alt="RAVI777555 Contact"
-                        class="contact-image"
-                    >
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
-
-    <footer>
-
-        <div class="container">
-
-            <div class="footer-top">
-
-                <div class="footer-brand">
-
-                    <h3>
-                        RAVI777555 | Nature Visuals
-                    </h3>
-
-                    <p>
-                        Documenting the natural world through
-                        original photography &amp; video.
-                    </p>
-
-                </div>
-
-
-                <div class="footer-links">
-
-                    <a href="#home">Home</a>
-
-                    <a href="#explore">Explore</a>
-
-                    <a href="#about">About</a>
-
-                    <a href="#philosophy">Philosophy</a>
-
-                    <a href="#information">Information</a>
-
-                    <a href="#contact">Contact</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                <div>
-                    © 2026 RAVI777555 — All Rights Reserved.
-                </div>
-
-                <div>
-                    Observe. Capture. Share.
-                </div>
-
-            </div>
-
-        </div>
-
-    </footer>
-
-
-
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================== -->
-
-    <script>
-
-        const menuBtn = document.getElementById("menuBtn");
-        const mainNav = document.getElementById("mainNav");
-
-        menuBtn.addEventListener("click", function () {
-
-            const isOpen = mainNav.classList.toggle("active");
-
-            menuBtn.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
-
-            menuBtn.textContent = isOpen ? "×" : "☰";
-
-        });
-
-
-        document.querySelectorAll("#mainNav a").forEach(function (link) {
-
-            link.addEventListener("click", function () {
-
-                mainNav.classList.remove("active");
-
-                menuBtn.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuBtn.textContent = "☰";
-
-            });
-
-        });
-
-    </script>
+</footer>
 
 
 </body>
 </html>
-```
