@@ -34,6 +34,7 @@
         }
 
         /* Header */
+
         .site-header {
             position: absolute;
             inset: 0 0 auto;
@@ -106,7 +107,8 @@
             color: var(--accent);
         }
 
-        /* Hero */
+        /* Hero Section */
+
         .hero {
             min-height: 100svh;
             min-height: 100vh;
@@ -114,18 +116,12 @@
             isolation: isolate;
             overflow: hidden;
 
-            /* Keep the supplied photograph unchanged. */
             background-image: url("20240309_173038.jpg");
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
         }
 
-        /*
-          The supplied cloud line crosses the upper-middle portion
-          of the photograph. All hero copy is anchored well below it.
-          No text, logo, or button is placed over the cloud.
-        */
         .hero-content {
             position: absolute;
             z-index: 1;
@@ -212,7 +208,8 @@
             background: #fff;
         }
 
-        /* Contact and footer remain simple for this first trial. */
+        /* Contact Section */
+
         .contact {
             padding: 72px 20px;
             text-align: center;
@@ -255,6 +252,55 @@
             background: rgba(255, 255, 255, 0.08);
         }
 
+        /* Social Media Section */
+
+        .social-connect {
+            padding: 35px 20px;
+            text-align: center;
+            background: #020a14;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .social-connect h3 {
+            color: #ffffff;
+            font-size: 15px;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 9px;
+            color: #c5e6ff;
+            text-decoration: none;
+            font-size: 11px;
+            transition: 0.3s;
+        }
+
+        .social-links img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .social-links a:hover {
+            color: #ffffff;
+            transform: translateY(-4px);
+        }
+
+        /* Footer */
+
         .site-footer {
             padding: 22px 16px;
             text-align: center;
@@ -264,7 +310,10 @@
             line-height: 1.6;
         }
 
+        /* Mobile Responsive */
+
         @media (max-width: 640px) {
+
             :root {
                 --header-height: 68px;
             }
@@ -302,10 +351,6 @@
             }
 
             .hero {
-                /*
-                  Keep the cloud line visible while reserving the
-                  lower blue area for the text on narrow screens.
-                */
                 background-position: 50% center;
             }
 
@@ -354,9 +399,19 @@
             .contact h2 {
                 font-size: 26px;
             }
+
+            .social-links {
+                gap: 22px;
+            }
+
+            .social-links img {
+                width: 27px;
+                height: 27px;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
+
             html {
                 scroll-behavior: auto;
             }
@@ -367,64 +422,216 @@
                 transition-duration: 0.01ms !important;
             }
         }
+
     </style>
 </head>
 
 <body>
+
+    <!-- Header -->
+
     <header class="site-header">
+
         <nav class="navbar" aria-label="Main navigation">
-            <a href="#home" class="brand" aria-label="RAVI777555 Nature Visuals home">
+
+            <a href="#home" class="brand"
+               aria-label="RAVI777555 Nature Visuals home">
+
                 <img src="IMG_0744.PNG" alt="">
+
                 <span class="brand-name">
                     RAVI777555
                     <span>NATURE VISUALS</span>
                 </span>
+
             </a>
 
             <div class="nav-links">
                 <a href="#home">HOME</a>
                 <a href="#contact">CONTACT</a>
             </div>
+
         </nav>
+
     </header>
 
     <main>
-        <section class="hero" id="home" aria-labelledby="hero-title">
+
+        <!-- Hero Section -->
+
+        <section class="hero" id="home"
+                 aria-labelledby="hero-title">
+
             <div class="hero-content">
-                <p class="hero-kicker">RAVI777555 &nbsp; | &nbsp; NATURE VISUALS</p>
-                <h1 id="hero-title">The Natural World,<br>Without Limits.</h1>
-                <p class="hero-tagline">From Beneath the Earth to Beyond the Sky.</p>
+
+                <p class="hero-kicker">
+                    RAVI777555 &nbsp; | &nbsp; NATURE VISUALS
+                </p>
+
+                <h1 id="hero-title">
+                    The Natural World,<br>
+                    Without Limits.
+                </h1>
+
+                <p class="hero-tagline">
+                    From Beneath the Earth to Beyond the Sky.
+                </p>
+
                 <p class="hero-description">
                     Discover the natural world through original photography
                     and videography — presented with authenticity and respect.
                 </p>
 
                 <div class="hero-actions">
+
                     <a class="button button-primary"
-                       href="https://www.youtube.com/@Ravi777555"
-                       target="_blank" rel="noopener noreferrer">
+                       href="https://www.youtube.com/@Ravi77755"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
                         Explore on YouTube
+
                     </a>
-                    <a class="button" href="#contact">Get in Touch</a>
+
+                    <a class="button" href="#contact">
+                        Get in Touch
+                    </a>
+
                 </div>
+
             </div>
+
         </section>
 
+        <!-- Contact Section -->
+
         <section class="contact" id="contact">
+
             <div class="contact-inner">
+
                 <h2>Contact</h2>
+
                 <p>
                     For media and general inquiries, please get in touch:
                 </p>
-                <a class="email-link" href="mailto:ravi777555official@gmail.com">
+
+                <a class="email-link"
+                   href="mailto:ravi777555official@gmail.com">
+
                     ravi777555official@gmail.com
+
                 </a>
+
             </div>
+
         </section>
+
+        <!-- Social Media Section -->
+
+        <section class="social-connect">
+
+            <h3>CONNECT WITH US</h3>
+
+            <div class="social-links">
+
+                <!-- YouTube -->
+
+                <a href="https://www.youtube.com/@Ravi77755"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Visit YouTube">
+
+                    <img src="https://cdn.simpleicons.org/youtube"
+                         alt="YouTube">
+
+                    <span>YouTube</span>
+
+                </a>
+
+                <!-- Instagram -->
+
+                <a href="https://www.instagram.com/ravi777555/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Visit Instagram">
+
+                    <img src="https://cdn.simpleicons.org/instagram"
+                         alt="Instagram">
+
+                    <span>Instagram</span>
+
+                </a>
+
+                <!-- Facebook -->
+
+                <a href="https://www.facebook.com/share/1GuDqo7DQ2/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Visit Facebook">
+
+                    <img src="https://cdn.simpleicons.org/facebook"
+                         alt="Facebook">
+
+                    <span>Facebook</span>
+
+                </a>
+
+                <!-- Threads -->
+
+                <a href="https://www.threads.com/@ravi777555"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Visit Threads">
+
+                    <img src="https://cdn.simpleicons.org/threads"
+                         alt="Threads">
+
+                    <span>Threads</span>
+
+                </a>
+
+                <!-- X -->
+
+                <a href="https://x.com/ravi777555"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Visit X">
+
+                    <img src="https://cdn.simpleicons.org/x"
+                         alt="X">
+
+                    <span>X</span>
+
+                </a>
+
+                <!-- Snapchat -->
+
+                <a href="https://snapchat.com/t/2W1kDV5i"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Visit Snapchat">
+
+                    <img src="https://cdn.simpleicons.org/snapchat"
+                         alt="Snapchat">
+
+                    <span>Snapchat</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
     </main>
 
+    <!-- Footer -->
+
     <footer class="site-footer">
-        &copy; 2026 RAVI777555. Nature Visuals, RAVI77755. The Project Radian. All rights reserved.
+
+        &copy; 2026 RAVI777555. Nature Visuals,
+        RAVI77755. The Project Radian. All rights reserved.
+
     </footer>
+
 </body>
 </html>
